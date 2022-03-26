@@ -66,6 +66,9 @@ enum sns_physical_sensor_oem_config_type
   SNS_PHYSICAL_SENSOR_CONFIG_HIGHLCD = 11;
 
   SNS_PHYSICAL_SENSOR_CONFIG_LOWLCD = 12;
+
+  // Communication sensor channel calibration.
+  SNS_PHYSICAL_SENSOR_CONFIG_CHANNEL_CALI = 13;
 }
 
 // Supported device charge types for bme sensors
@@ -115,6 +118,7 @@ message sns_physical_sensor_oem_config
   optional float parsed_r = 19;
   optional float parsed_g = 20;
   optional float parsed_b = 21;
+  repeated float f =22 [(nanopb).max_count = 20];
 }
 
 // Physical Sensor test event
